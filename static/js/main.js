@@ -1,4 +1,35 @@
 (() => {
+  const passwordDialog = document.querySelector(".password-dialog");
+  const passwordForm = document.querySelector(".password-form");
+  const passwordInput = document.querySelector("#site-password");
+  const passwordError = document.querySelector("#password-error");
+  const cancelButton = document.querySelector("[data-password-cancel]");
+  let gatedLink;
+
+  document.querySelectorAll("[data-password-gate]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      gatedLink = link;
+      passwordForm.reset();
+      passwordError.hidden = true;
+      passwordDialog.showModal();
+      passwordInput.focus();
+    });
+  });
+
+  passwordForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!gatedLink || passwordInput.value !== gatedLink.dataset.password) {
+      passwordError.hidden = false;
+      passwordInput.select();
+      return;
+    }
+
+    window.location.assign(gatedLink.href);
+  });
+
+  cancelButton?.addEventListener("click", () => passwordDialog.close());
+
   const container = document.querySelector("[data-blog-index]");
   const list = document.querySelector("#blog-updates");
   if (!container || !list) return;

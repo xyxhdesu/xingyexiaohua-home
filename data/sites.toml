@@ -7,6 +7,15 @@ status = "在线"
 accent = "coral"
 
 [[sites]]
+name = "单词网站"
+url = "https://words.xingyexiaohua.xyz/"
+description = "暂未开放；输入访问密码后可进入。"
+label = "WORDS"
+status = "暂未开放"
+accent = "mint"
+password = "114514"
+
+[[sites]]
 name = "开发中"
 url = ""
 description = "新的小天地正在准备，完成后会在这里出现。"

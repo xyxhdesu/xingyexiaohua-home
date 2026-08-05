@@ -27,6 +27,13 @@
             <h3>{{ .name }}</h3>
             <p>{{ .description }}</p>
           </article>
+        {{ else if .password }}
+          <a class="site-card accent-{{ .accent }}" href="{{ .url }}" data-password-gate data-site-name="{{ .name }}" data-password="{{ .password }}">
+            <span class="sr-only">前往</span>
+            <div class="card-top"><span class="site-label">{{ .label }}</span><span class="status">{{ .status }}</span></div>
+            <h3>{{ .name }} <span aria-hidden="true">&#8599;</span></h3>
+            <p>{{ .description }}</p>
+          </a>
         {{ else }}
           <a class="site-card accent-{{ .accent }}" href="{{ .url }}">
             <span class="sr-only">前往</span>
@@ -52,6 +59,23 @@
     </div>
   </section>
 </main>
+
+<dialog class="password-dialog" aria-labelledby="password-dialog-title">
+  <form class="password-form" method="dialog">
+    <div class="dialog-heading">
+      <p class="eyebrow">PRIVATE ACCESS</p>
+      <h2 id="password-dialog-title">单词网站</h2>
+      <p>该站点暂未公开开放。</p>
+    </div>
+    <label for="site-password">访问密码</label>
+    <input id="site-password" name="password" type="password" inputmode="numeric" autocomplete="current-password" required>
+    <p class="password-error" id="password-error" role="alert" hidden>密码不正确，请重试。</p>
+    <div class="dialog-actions">
+      <button class="button-secondary" type="button" data-password-cancel>取消</button>
+      <button class="button-primary" type="submit">进入</button>
+    </div>
+  </form>
+</dialog>
 
 <footer>
   <p>&copy; {{ now.Year }} 星野小花</p>
