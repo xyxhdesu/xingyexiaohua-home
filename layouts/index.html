@@ -20,7 +20,7 @@
       <p>每个分站都有自己的主题与节奏。</p>
     </header>
     <div class="site-grid">
-      {{ range hugo.Data.sites.sites }}
+      {{ range .Site.Data.sites.sites }}
         {{ if .disabled }}
           <article class="site-card is-disabled" aria-label="{{ .name }}，{{ .status }}">
             <div class="card-top"><span class="site-label">{{ .label }}</span><span class="status">{{ .status }}</span></div>
