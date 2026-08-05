@@ -7,10 +7,10 @@ status = "在线"
 accent = "coral"
 
 [[sites]]
-name = "单词网站"
+name = "测试站"
 url = "https://words.xingyexiaohua.xyz/"
 description = "暂未开放；输入访问密码后可进入。"
-label = "WORDS"
+label = "TEST SITE"
 status = "暂未开放"
 accent = "mint"
 password = "114514"
