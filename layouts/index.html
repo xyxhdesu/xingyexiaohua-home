@@ -1,0 +1,60 @@
+{{ define "main" }}
+<main>
+  <section class="intro" aria-labelledby="site-title">
+    <div class="intro-copy">
+      <p class="eyebrow">XINGYE XIAOHUA</p>
+      <h1 id="site-title">星野小花</h1>
+      <p class="lede">欢迎来到我的网络据点。<br>从这里，去往每一处正在生长的小天地。</p>
+    </div>
+    <figure class="profile">
+      <img src="{{ .Site.Params.avatar }}" alt="星野小花的头像" width="168" height="168">
+    </figure>
+  </section>
+
+  <section class="destinations" aria-labelledby="destinations-title">
+    <header class="section-header">
+      <div>
+        <p class="eyebrow">DESTINATIONS</p>
+        <h2 id="destinations-title">站点入口</h2>
+      </div>
+      <p>每个分站都有自己的主题与节奏。</p>
+    </header>
+    <div class="site-grid">
+      {{ range hugo.Data.sites.sites }}
+        {{ if .disabled }}
+          <article class="site-card is-disabled" aria-label="{{ .name }}，{{ .status }}">
+            <div class="card-top"><span class="site-label">{{ .label }}</span><span class="status">{{ .status }}</span></div>
+            <h3>{{ .name }}</h3>
+            <p>{{ .description }}</p>
+          </article>
+        {{ else }}
+          <a class="site-card accent-{{ .accent }}" href="{{ .url }}">
+            <span class="sr-only">前往</span>
+            <div class="card-top"><span class="site-label">{{ .label }}</span><span class="status">{{ .status }}</span></div>
+            <h3>{{ .name }} <span aria-hidden="true">&#8599;</span></h3>
+            <p>{{ .description }}</p>
+          </a>
+        {{ end }}
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="updates" aria-labelledby="updates-title" data-blog-index="{{ .Site.Params.blog_index }}">
+    <header class="section-header">
+      <div>
+        <p class="eyebrow">FROM THE BLOG</p>
+        <h2 id="updates-title">最近更新</h2>
+      </div>
+      <a class="text-link" href="https://blog.xingyexiaohua.xyz/">访问博客 <span aria-hidden="true">&#8599;</span></a>
+    </header>
+    <div class="update-list" id="blog-updates" aria-live="polite">
+      <p class="loading">正在读取最近的文章。</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; {{ now.Year }} 星野小花</p>
+  <a href="mailto:xyxhdesu@qq.com">xyxhdesu@qq.com</a>
+</footer>
+{{ end }}

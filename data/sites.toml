@@ -1,0 +1,16 @@
+[[sites]]
+name = "博客"
+url = "https://blog.xingyexiaohua.xyz/"
+description = "记录仍在继续的冒险、想法与日常。"
+label = "BLOG"
+status = "在线"
+accent = "coral"
+
+[[sites]]
+name = "开发中"
+url = ""
+description = "新的小天地正在准备，完成后会在这里出现。"
+label = "COMING SOON"
+status = "筹备中"
+accent = "mint"
+disabled = true
