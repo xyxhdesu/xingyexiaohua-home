@@ -101,7 +101,8 @@ h2 { margin-bottom: 0; font-family: Georgia, "Noto Serif SC", serif; font-size: 
   transition: transform 160ms ease, background-color 160ms ease;
 }
 
-a.site-card:hover, a.site-card:focus-visible { transform: translateY(-5px); outline: 2px solid var(--mint); outline-offset: 3px; }
+a.site-card:hover, a.site-card:focus-visible, button.site-card:hover, button.site-card:focus-visible { transform: translateY(-5px); outline: 2px solid var(--mint); outline-offset: 3px; }
+button.site-card { width: 100%; color: inherit; background: transparent; font: inherit; text-align: left; cursor: pointer; }
 .accent-coral:hover, .accent-coral:focus-visible { background: var(--coral-soft); }
 .accent-mint:hover, .accent-mint:focus-visible { background: var(--mint-soft); }
 .is-disabled { border-color: var(--line); color: var(--muted); }
@@ -139,6 +140,7 @@ h3 { margin: auto 0 8px; font-family: Georgia, "Noto Serif SC", serif; font-size
 }
 .password-form input:focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; }
 .password-error { margin: 10px 0 0; color: #b13626; font-size: 14px; }
+.password-success { margin: 10px 0 0; color: var(--mint); font-size: 14px; }
 .dialog-actions { display: flex; justify-content: flex-end; gap: 12px; margin-top: 28px; }
 .dialog-actions button { min-height: 40px; padding: 8px 16px; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer; }
 .button-primary { border: 1px solid var(--mint); color: #fff; background: var(--mint); }

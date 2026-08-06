@@ -8,8 +8,7 @@ accent = "coral"
 
 [[sites]]
 name = "测试站"
-url = "https://words.xingyexiaohua.xyz/"
-description = "暂未开放；输入访问密码后可进入。"
+description = "暂未开放；可以在这里输入访问密码。"
 label = "TEST SITE"
 status = "暂未开放"
 accent = "mint"

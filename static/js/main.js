@@ -3,6 +3,7 @@
   const passwordForm = document.querySelector(".password-form");
   const passwordInput = document.querySelector("#site-password");
   const passwordError = document.querySelector("#password-error");
+  const passwordSuccess = document.querySelector("#password-success");
   const cancelButton = document.querySelector("[data-password-cancel]");
   let gatedLink;
 
@@ -12,6 +13,7 @@
       gatedLink = link;
       passwordForm.reset();
       passwordError.hidden = true;
+      if (passwordSuccess) passwordSuccess.hidden = true;
       passwordDialog.showModal();
       passwordInput.focus();
     });
@@ -21,11 +23,14 @@
     event.preventDefault();
     if (!gatedLink || passwordInput.value !== gatedLink.dataset.password) {
       passwordError.hidden = false;
+      if (passwordSuccess) passwordSuccess.hidden = true;
       passwordInput.select();
       return;
     }
 
-    window.location.assign(gatedLink.href);
+    passwordError.hidden = true;
+    if (passwordSuccess) passwordSuccess.hidden = false;
+    passwordInput.select();
   });
 
   cancelButton?.addEventListener("click", () => passwordDialog.close());

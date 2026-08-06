@@ -28,12 +28,12 @@
             <p>{{ .description }}</p>
           </article>
         {{ else if .password }}
-          <a class="site-card accent-{{ .accent }}" href="{{ .url }}" data-password-gate data-site-name="{{ .name }}" data-password="{{ .password }}">
-            <span class="sr-only">前往</span>
+          <button class="site-card accent-{{ .accent }}" type="button" data-password-gate data-site-name="{{ .name }}" data-password="{{ .password }}">
+            <span class="sr-only">打开密码验证</span>
             <div class="card-top"><span class="site-label">{{ .label }}</span><span class="status">{{ .status }}</span></div>
-            <h3>{{ .name }} <span aria-hidden="true">&#8599;</span></h3>
+            <h3>{{ .name }}</h3>
             <p>{{ .description }}</p>
-          </a>
+          </button>
         {{ else }}
           <a class="site-card accent-{{ .accent }}" href="{{ .url }}">
             <span class="sr-only">前往</span>
@@ -70,6 +70,7 @@
     <label for="site-password">访问密码</label>
     <input id="site-password" name="password" type="password" inputmode="numeric" autocomplete="current-password" required>
     <p class="password-error" id="password-error" role="alert" hidden>密码不正确，请重试。</p>
+    <p class="password-success" id="password-success" role="status" hidden>密码正确，但测试站暂未开放。</p>
     <div class="dialog-actions">
       <button class="button-secondary" type="button" data-password-cancel>取消</button>
       <button class="button-primary" type="submit">进入</button>
