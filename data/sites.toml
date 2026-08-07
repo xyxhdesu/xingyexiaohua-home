@@ -6,6 +6,16 @@ label = "BLOG"
 status = "在线"
 accent = "coral"
 
+
+[[sites]]
+name = "工具站"
+url = "https://tools.xingyexiaohua.xyz/"
+description = "星野小花整理的工具与网站入口，按用途快速查找。"
+label = "TOOLS"
+status = "正在初始化"
+accent = "mint"
+
+
 [[sites]]
 name = "测试站"
 description = "暂未开放；可以在这里输入访问密码。"
@@ -13,6 +23,7 @@ label = "TEST SITE"
 status = "暂未开放"
 accent = "mint"
 password = "114514"
+
 
 [[sites]]
 name = "开发中"
